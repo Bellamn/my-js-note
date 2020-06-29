@@ -16,7 +16,7 @@ Funtion.prototype.bind = functino(context, ...args){
         self.apply(context, args.concat(Array.prototype.slice.call(arguments)));
     }
 
-    fbound = Object.create(this.prototype);
+    fbound.prototype = Object.create(this.prototype);
 
     return fbound; 
 }
